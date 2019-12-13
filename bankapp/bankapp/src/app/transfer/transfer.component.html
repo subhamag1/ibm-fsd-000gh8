@@ -1,0 +1,46 @@
+
+<div style="background-color: rgb(0, 172, 154); text-align:center ">
+        <!-- Navbar content -->
+        <div style="display:inline-block"><a routerLink="/Home" style="text-decoration:none"><h6 style="color:white">&nbsp;Home&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/deposit" style="text-decoration:none"><h6 style="color:white">&nbsp;Deposit&emsp;&nbsp;</h6></a></div>
+               
+        <div style="display:inline-block"><a routerLink="/withdrawal" style="text-decoration:none"><h6 style="color:white">&nbsp;Withdrawal&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/transfer" style="text-decoration:none"><h6 id="a" style="color:white">&nbsp;Transfer&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/passbook" style="text-decoration:none"><h6 style="color:white">&nbsp;Passbook&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a href="#" (click)="logout()" style="text-decoration:none"><h6 style="color:white">&nbsp;Logout&emsp;&nbsp;</h6></a></div>
+
+    </div>
+    
+    <div class="card text-center">
+            <div class="card-header">
+            <b>ABS Quick Withdraw Service</b>
+            </div>
+            <div class="card-body bg-dark" style="text-align: center">
+                <table style="margin-left: 550px;">
+                    <tr style="text-align: center">
+                        <td class="card-title" style="-webkit-text-fill-color: white"> Receiver's Name : </td>
+                        <td><input type="text" id="rname"></td>
+                    </tr>
+                    <tr style="text-align: right; ">
+                            <td><p class="card-text" style="-webkit-text-fill-color: white">Amount : </p></td>
+                            <td><input type="number" id="amount"></td>
+                    </tr>
+                </table>
+              <br>
+              <button type="button" (click)=transfer() class="btn btn-success" >Transfer</button>
+            </div>
+            <div class="card-footer text-muted">
+                    <marquee width="60%"  height="20px">
+                            <b>Get 4.5% interest in your ABS savings account</b>
+                            </marquee>
+            </div>
+          </div>
+          
+          <div class="container">
+               
+                
+         </div>

@@ -1,0 +1,60 @@
+<div style="background-color: rgb(0, 172, 154); text-align:center ">
+    <!-- Navbar content -->
+    <div style="display:inline-block"><a routerLink="/Home" style="text-decoration:none"><h6 style="color:white">&nbsp;Home&emsp;&nbsp;</h6></a></div>
+
+    <div style="display:inline-block"><a routerLink="/deposit" style="text-decoration:none"><h6 style="color:white">&nbsp;Deposit&emsp;&nbsp;</h6></a></div>
+           
+    <div style="display:inline-block"><a routerLink="/withdrawal" style="text-decoration:none"><h6 style="color:white">&nbsp;Withdrawal&emsp;&nbsp;</h6></a></div>
+
+    <div style="display:inline-block"><a routerLink="/transfer" style="text-decoration:none"><h6 style="color:white">&nbsp;Transfer&emsp;&nbsp;</h6></a></div>
+
+    <div style="display:inline-block"><a  routerLink="/passbook" style="text-decoration:none"><h6 id="a" style="color:white">&nbsp;Passbook&emsp;&nbsp;</h6></a></div>
+
+    <div style="display:inline-block"><a href="#" (click)="logout()" style="text-decoration:none"><h6 style="color:white">&nbsp;Logout&emsp;&nbsp;</h6></a></div>
+
+</div>
+
+<div id="passbook">
+    <table class="table table-sm" style=" background-color:#454d55; -webkit-text-fill-color: white">
+        <thead>
+        <th scope="col">To</th>
+        <th scope="col">From</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Amount</th>
+        <th>Time</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of mydata">
+        <td scope="row"  *ngIf="data._to==name else hello1">-
+            
+        </td>
+        <ng-template #hello1>
+                <td>{{data._to}}</td>
+            </ng-template>
+            <td scope="row"  *ngIf="data._from==name else hello2">-
+            
+                </td>
+                <ng-template #hello2>
+                        <td>{{data._from}}</td>
+                    </ng-template>
+        <td *ngIf="data._status=='t' else helloUser">
+            <p *ngIf="data._from==name else h2">
+                debit
+            </p>
+            <ng-template #h2>
+                <p>credit</p>
+            </ng-template>
+        </td>
+        <ng-template #helloUser>
+                <td >{{data._status}}
+                </td>
+        </ng-template>
+        <td>{{data.amount}}</td>
+        <td>{{data._datetime}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <div style="text-align: right">
+            <button class="btn btn-success" (click)="print()">print passbook</button>
+        </div>
+</div>

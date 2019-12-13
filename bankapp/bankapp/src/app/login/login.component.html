@@ -1,0 +1,71 @@
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+
+<body >
+    <div class="container">
+      <div class="row" id="parent">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body" id="parent1">
+              <h3 class="card-title text-center" style="font-weight: bolder">ABS BANK</h3>
+                <div class="form-label-group" id="n">
+                  ENTER NAME
+                  <input type="text" id="name" class="form-control"  required autofocus>
+                  <label for="inputEmail"></label>
+                </div>
+
+                <div class="form-label-group" id="pass">
+                  ENTER PASSWORD
+                  <div class="lds-spinner" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                  <input type="password" id="password" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword"></label>
+                </div>
+  
+                <div class="custom-control custom-checkbox mb-3" id="check">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-dark btn-block text-uppercase" (click)="login()"type="button" id="btnn">LOGIN</button>
+                <hr class="my-4">
+                
+                Not a User?<a routerLink="/register">&nbsp;Register Now</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="openModal" #openModal [hidden]="true" data-controls-modal="#login-modal" data-backdrop="static" data-keyboard="false" 
+data-toggle="modal" data-target="#citymodal" ></button>    
+
+    <div class="modal fade " id="citymodal" role="dialog">
+        <div class="modal-dialog ">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            
+            <div class="modal-body ">
+              <div style="text-align:center; background-color:rgb(248, 184, 66); border-radius: 10px"><br>
+                <h3>Invalid login Credentials</h3><br></div>
+                <br><br><br>
+                <!-- <form method="get" action="homepage">
+                <input routerLink="homepage/bangalore" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-256/assembly-1-119693.png" alt="Submit" width="150" height="150">
+                <input routerLink="homepage/hyderabad" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-512/charminar-1-119696.png" alt="Submit" width="150" height="150">
+                <input routerLink="homepage/pune" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-256/surat-155248.png" alt="Submit" width="150" height="150">
+                </form> -->
+                <div style="text-align: center">
+                    <button (click)="return()"  data-dismiss="modal" aria-label="Close" class="btn btn-dark">Try again</button>
+                </div>
+               
+          
+          </div>
+      
+        </div>
+        
+      </div>
+      </div>
+      <!-- <div class="lds-spinner" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> -->
+      <div style="height:300px; background-color:#454d55">
+
+      </div>
+  </body>

@@ -1,0 +1,70 @@
+
+<div style="background-color: rgb(0, 172, 154); text-align:center ">
+        <!-- Navbar content -->
+        <div style="display:inline-block"><a routerLink="/Home" style="text-decoration:none"><h6 style="color:white">&nbsp;Home&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/deposit" style="text-decoration:none"><h6 style="color:white">&nbsp;Deposit&emsp;&nbsp;</h6></a></div>
+               
+        <div style="display:inline-block"><a routerLink="/withdrawal" style="text-decoration:none"><h6 id="a" style="color:white">&nbsp;Withdrawal&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/transfer" style="text-decoration:none"><h6 style="color:white">&nbsp;Transfer&emsp;&nbsp;</h6></a></div>
+    
+        <div style="display:inline-block"><a routerLink="/passbook" style="text-decoration:none"><h6 style="color:white">&nbsp;Passbook&emsp;&nbsp;</h6></a></div>
+    
+        
+    <div style="display:inline-block"><a href="#" (click)="logout()" style="text-decoration:none"><h6 style="color:white">&nbsp;Logout&emsp;&nbsp;</h6></a></div>
+
+    </div>
+    
+    <div class="card text-center">
+            <div class="card-header">
+            <b>ABS Quick Withdraw Service</b>
+            </div>
+            <div class="card-body bg-dark">
+              <h5 class="card-title" style="-webkit-text-fill-color: white"> Enter Amount :
+                <br></h5>
+              <p class="card-text"><input type="number" id="amount"></p>
+              <button type="button" (click)=withdraw() class="btn btn-success" >Withdraw</button>
+            </div>
+            <div class="card-footer text-muted">
+                    <marquee width="60%"  height="20px">
+                            <b>Get 4.5% interest in your ABS savings account</b>
+                            </marquee>
+            </div>
+          </div>
+          
+          <div class="container">
+               
+                
+                </div>
+    
+                <button id="openModal" #openModal [hidden]="true" data-controls-modal="#login-modal" data-backdrop="static" data-keyboard="false" 
+                data-toggle="modal" data-target="#citymodal" ></button>    
+                
+                    <div class="modal fade " id="citymodal" role="dialog">
+                        <div class="modal-dialog ">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            
+                            <div class="modal-body ">
+                              <div style="text-align:center; background-color:rgb(0, 226, 49); border-radius: 10px"><br>
+                                <h3>Rs {{amount}} withdrawn from your account Successfully !</h3><br></div>
+                                <br><br><br>
+                                <!-- <form method="get" action="homepage">
+                                <input routerLink="homepage/bangalore" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-256/assembly-1-119693.png" alt="Submit" width="150" height="150">
+                                <input routerLink="homepage/hyderabad" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-512/charminar-1-119696.png" alt="Submit" width="150" height="150">
+                                <input routerLink="homepage/pune" data-dismiss="modal" type="image" src="https://cdn.iconscout.com/icon/free/png-256/surat-155248.png" alt="Submit" width="150" height="150">
+                                </form> -->
+                                <b>Your Current balance :</b><b id="curbal"></b>
+                                <div style="text-align: center">
+                                    <button data-dismiss="modal" aria-label="Close" class="btn btn-dark">Ok</button>
+                                </div>
+                               
+                          
+                          </div>
+                      
+                        </div>
+                        
+                      </div>
+                      </div>

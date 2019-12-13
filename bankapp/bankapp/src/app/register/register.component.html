@@ -1,0 +1,72 @@
+<div style="text-align: center; background-image: url(https://beanstalkwebsolutions.com/blog/wp-content/uploads/2016/08/ways-your-website-can-hurt-sales.jpg)" >
+    <div *ngIf="error">
+        <div class="alert alert-danger">
+            <strong style="color: black; font-size: 20px;">{{error}}</strong>
+        </div>
+    </div>
+    
+    <div class="signup-form " style="width: 600px; display:inline-block">
+    
+        <form [formGroup]='signupform' (ngSubmit)="postData(signupform)" class="shadow-lg bg-black" style="background-color: white"> 
+            <h2 style="-webkit-text-fill-color: black;">Register</h2>
+            <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+            <div class="form-group" >
+    
+                <div class="row">
+                    <div class="col-6"><input type="text" class="form-control" formControlName="fname" placeholder="First Name" [ngClass]="{'is-invalid':signupform.get('fname').errors && (signupform.get('fname').touched || signupform.get('fname').dirty)}"></div>
+                    <div class="invalid-feedback">
+                        <div>First Name is Required</div>
+                    </div>
+                    <div class="col-6"><input type="text" class="form-control" formControlName="lname" placeholder="Last Name" [ngClass]="{'is-invalid':signupform.get('lname').touched && signupform.get('lname').invalid}"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" placeholder="Email" [ngClass]="{'is-invalid':signupform.get('email').touched && signupform.get('email').invalid}">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName="password" placeholder="Password" [ngClass]="{'is-invalid':signupform.get('password').touched && signupform.get('password').invalid}">
+                 </div>
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName="confirmPass" placeholder="Confirm Password" [ngClass]="{'is-invalid':signupform.get('confirmPass').touched && signupform.get('confirmPass').invalid}"> 
+               <div *ngIf="signupform.get('password').value==''">
+               <div *ngIf="signupform.get('password').value == signupform.get('confirmPass').value" class="text-success">Passwords match</div> 
+                <div *ngIf="signupform.get('password').value != signupform.get('confirmPass').value" class="text-danger">Passwords do not match</div> 
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="accountnumber" placeholder="account Number" [ngClass]="{'is-invalid':signupform.get('accountnumber').errors && (signupform.get('accountnumber').touched || signupform.get('accountnumber').invalid)}">
+            <div class="help-block" *ngIf="signupform.get('accountnumber').errors && (signupform.get('accountnumber').touched || signupform.get('accountnumber').invalid)">
+               <div *ngIf="signupform.get('accountnumber').errors.pattern" class="text-danger">Account Number can only be of numbers.</div> 
+            </div>
+            </div>
+            <div class="form-group">
+                <select class="form-control" formControlName="accounttype">
+                    <option value="Savings" selected>Savings</option>
+                    <option value="Current" selected>Current</option>
+                </select>
+        
+            </div>
+            <!-- Group of default radios - option 1 -->
+            <div >
+                    <label class="radio-inline">
+                      <input type="radio" value = "male" id="gender" name="gender" formControlName="gender" >
+                      Male
+                    </label>
+                    <label class="radio-inline">&nbsp;
+                            <input type="radio" value = "female"  id="gender"  name="gender" formControlName="gender" >
+                            Female
+                    </label>
+                </div>
+            <div class="form-group">
+                <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]='!signupform.valid'>Register Now</button>
+            </div>
+            Already a User?<a routerLink="/login">&nbsp;Login Now</a>
+        </form>
+
+        
+    
+        
+    
